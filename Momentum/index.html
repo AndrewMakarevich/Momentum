@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="stylesheet" href="./styles/owfont-regular.css" type="text/css">
+    <title>Momentum</title>
+</head>
+
+<body>
+    <header class="header">
+        <section class="music-player">
+            <audio class="player" controls>
+
+            </audio>
+            <div class='player-controls'>
+                <div class='track'>
+                    <input type="range" class="track-time" min="0" value="0" step="1"></input>
+                </div>
+                <button class="player-prev-btn">prev</button>
+                <button class="player-btn-play">play</button>
+                <button class="player-btn-pause unactive">pause</button>
+                <button class="player-next-btn">next</button>
+            </div>
+        </section>
+        <section class="weather-section">
+            <input class="city-weather-input" placeholder="city" />
+            <button class="city-weather-btn">check</button>
+            <section class="weather-section__data">
+                <ul class="weather-data__list">
+                    <li class="weatherIcon">
+                        <i class="owf"></i>
+                    </li>
+                    <li class="weathertemp-descr"></li>
+                    <li class="weather-windSpeed"></li>
+                    <li class="weather-humidity"></li>
+                </ul>
+
+            </section>
+        </section>
+
+    </header>
+    <main class=" main">
+        <section class="currentTime">
+        </section>
+        <section class="currentDate"></section>
+        <section class="welcome-block">
+            <div class="welcome-block__welcoming"></div>
+            <input class="welcome-block__author-input" type="text" placeholder="Your name" />
+        </section>
+        <section class="quotes">
+            <button class="rechange-quote-btn">retry</button>
+            <article class="quotes-text"></article>
+            <article class="quotes-author"></article>
+        </section>
+    </main>
+    <footer class="footer">FOOTER</footer>
+    <script src="./scripts/time-script.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./scripts/quotes-script.js"></script>
+    <script src="./scripts/welcome-script.js"></script>
+    <script src="./scripts/save-user-name.js"></script>
+    <script src="./scripts/weather-script.js"></script>
+    <script src="https://kit.fontawesome.com/e7c3a216cf.js" crossorigin="anonymous"></script>
+    <script src="./scripts/player-script.js"></script>
+</body>
+
+</html>
