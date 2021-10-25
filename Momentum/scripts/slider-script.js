@@ -1,7 +1,6 @@
 async function sliderScript() {
-    const host = axios.create();
-    const { data } = await host.get('https://github.com/rolling-scopes-school/stage1-tasks/blob/assets/images/afternoon/01.jpg');
-    console.log(data);
+
+
     const sliderBlock = document.querySelector('.slider');
     const sliderPictures = sliderBlock.querySelectorAll('.slider-image');
     let srcArray = [];
