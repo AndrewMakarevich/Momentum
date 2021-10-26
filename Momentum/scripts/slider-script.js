@@ -1,4 +1,5 @@
 async function sliderScript() {
+    let a;
     const host = axios.create({
         baseURL: 'https://api.github.com'
     });
