@@ -1,6 +1,5 @@
 async function sliderScript() {
 
-
     const sliderBlock = document.querySelector('.slider');
     const sliderPictures = sliderBlock.querySelectorAll('.slider-image');
     let srcArray = [];
