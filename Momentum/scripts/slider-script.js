@@ -1,12 +1,29 @@
 async function sliderScript() {
-
+    const host = axios.create({
+        baseURL: 'https://api.github.com'
+    });
+    let currentPeriod;
+    if (hours >= 0 && hours < 6) {
+        currentPeriod = "night";
+    } else if (hours >= 6 && hours < 12) {
+        currentPeriod = "morning";
+    } else if (hours >= 12 && hours < 18) {
+        currentPeriod = "afternoon";
+    } else {
+        currentPeriod = "evening";
+    }
+    const {data} = await host.get(`/repos/AndrewMakarevich/stage1-tasks/contents/images/${currentPeriod}?ref=assets`);
+    
 
     const sliderBlock = document.querySelector('.slider');
     const sliderPictures = sliderBlock.querySelectorAll('.slider-image');
-    let srcArray = [];
-    sliderPictures.forEach(img => {
-        srcArray = [...srcArray, img.src];
+    sliderPictures.forEach((img)=>{
         img.remove();
+    });
+    let srcArray = [];
+    data.forEach(img => {
+        srcArray = [...srcArray, img.download_url];
+        // img.remove();
     });
     console.log(srcArray);
     let step = 0;

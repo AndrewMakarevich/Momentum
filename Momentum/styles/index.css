@@ -8,7 +8,6 @@ body{
     flex-direction: column;
     justify-content: space-between;
     margin: 0;
-    height: 100vh;
 }
 body::-webkit-slider-thumb{
     background-color: firebrick;
@@ -225,10 +224,10 @@ background-position:center;
 }
 
 .slider{
+    position: fixed;
     z-index: -1;
     width: 100vw;
     height: 100vh;
-    position: absolute;
     overflow: hidden;
     /* background-image: url(../icons/test-picture.jpg); */
 }
