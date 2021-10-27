@@ -58,8 +58,8 @@ main, footer{
     display: flex;
 }
 .track-timer{
-    /* min-width: 88px; */
-    /* font-size: 10px; */
+    font-size: 10px;
+    font-family: var(--mono-font);
     color:black;
 }
 .track-time{
