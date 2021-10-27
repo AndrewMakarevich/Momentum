@@ -18,6 +18,7 @@ body{
     flex-direction: column;
     justify-content: space-between;
     margin: 0;
+    min-height: 100vh;
     background-color: rgb(0, 0, 0);
 }
 body::-webkit-slider-thumb{
@@ -182,12 +183,13 @@ background-position:center;
     text-align: center;
 }
 .welcome-block{
-    display: grid;
+    display: flex;
+    justify-content: center;
     width: 100%;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    grid-gap: 0 25px;
+
 }
 .welcome-block__welcoming{
+    /* display: inline; */
     text-align: end;
     font-size: 40px;
 }
@@ -218,6 +220,10 @@ background-position:center;
 }
 .rechange-quote-btn:active{
     transform: scale(0.5);
+}
+.quotes-author{
+    font-size: 20px;
+    margin-top: 15px;
 }
 .repeat-icon{
     color: white;
@@ -292,5 +298,15 @@ background-position:center;
     .header{
         flex-direction: column;
         align-items:center;
+    }
+    .welcome-block{
+
+    }
+    .welcome-block__welcoming{
+        font-size: 25px;
+    }
+    .welcome-block__author-input{
+        text-align: start;
+        font-size: 25px;
     }
 }

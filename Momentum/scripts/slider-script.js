@@ -163,7 +163,9 @@ async function sliderScript() {
     let resizeTimeout;
     function resizeFunction() {
         clearTimeout(resizeTimeout);
+
         resizeTimeout = setTimeout(() => {
+            console.log('resize');
             imgs = document.querySelectorAll('.slider-image');
             imgs.forEach(img => {
                 srcArray = [...srcArray, img.src];
