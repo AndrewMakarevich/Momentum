@@ -109,9 +109,6 @@ function playerScript() {
         } else {
             activateTimeLineTimer()
         }
-
-
-
     }
     function disablePlayer() {
         playBtn.classList.remove('unactive');
@@ -129,6 +126,7 @@ function playerScript() {
         timeLine = setInterval(() => {
             trackTimer.innerText = `${setTimer(player.currentTime, player.duration)}/${minutes < 10 ? '0' + minutes : minutes}:${seconds < 10 ? "0" + seconds : seconds}`;
             setTimeLine(player.currentTime, player.duration);
+            console.log('play');
         }, 10);
     }
 
