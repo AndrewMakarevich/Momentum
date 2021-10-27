@@ -2,6 +2,16 @@
     font-family: Comfortaa;
     src: url(../fonts/Comfortaa.ttf);
 }
+@font-face {
+    font-family: NotoSansMono;
+    src: url(../fonts/NotoSansMono.ttf);
+}
+:root{
+    --main-font: Comfortaa;
+}
+:root{
+    --mono-font: NotoSansMono;
+}
 
 body{
     display: flex;
@@ -19,7 +29,7 @@ main, footer{
 }
 .header{
     margin-top: 20px;
-    font-family: Comfortaa;
+    font-family: var(--main-font);
     color: white;
     display: flex;
     justify-content: space-between;
@@ -129,7 +139,7 @@ background-position:center;
 }
 
 .city-weather-input{
-    font-family: Comfortaa;
+    font-family: var(--main-font);
     font-size: 20px;
     background-color: transparent;
     border:none;
@@ -161,9 +171,12 @@ background-position:center;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-family: Comfortaa;
+    font-family: var(--main-font);
     color: white;
     font-size: 72px;
+}
+.currentTime{
+    font-family: var(--mono-font);
 }
 .currentDate{
     text-align: center;
@@ -180,7 +193,7 @@ background-position:center;
 }
 .welcome-block__author-input{
     text-align: start;
-    font-family: Comfortaa;
+    font-family: var(--main-font);
     color: white;
     background-color: transparent;
     font-size: 40px;
@@ -215,7 +228,7 @@ background-position:center;
     align-items:flex-end;
     justify-content: space-between;
     color: white;
-    font-family: Comfortaa;
+    font-family: var(--main-font);
 }
 .footer a {
     text-decoration: none;
