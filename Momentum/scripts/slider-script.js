@@ -17,10 +17,6 @@ async function sliderScript() {
 
 
     const sliderBlock = document.querySelector('.slider');
-    const sliderPictures = sliderBlock.querySelectorAll('.slider-image');
-    sliderPictures.forEach((img) => {
-        img.remove();
-    });
     let srcArray = [];
     data.forEach(img => {
         srcArray = [...srcArray, img.download_url];
@@ -60,10 +56,6 @@ async function sliderScript() {
                 step = 0;
             } else step += 1;
         }
-
-
-
-
 
     }
     srcArray.forEach(img => {
@@ -143,7 +135,6 @@ async function sliderScript() {
                 continue;
             }
         }
-        console.log(appearenceAfter);
         if (!appearenceAfter) {
             console.log('after no pic');
             srcArray.forEach(img => {
@@ -169,5 +160,20 @@ async function sliderScript() {
         }
         console.log(sliderStep);
     }
+    let resizeTimeout;
+    function resizeFunction() {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            imgs = document.querySelectorAll('.slider-image');
+            imgs.forEach(img => {
+                srcArray = [...srcArray, img.src];
+                return img.remove();
+            });
+            srcArray.forEach(img => {
+                return createImg();
+            });
+        }, 1000);
+    }
+    window.addEventListener('resize', resizeFunction);
 };
 sliderScript();
