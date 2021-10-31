@@ -24,7 +24,7 @@ async function sliderScript() {
     srcArray.sort(() => {
         return Math.random() - Math.random();
     });
-    console.log(srcArray);
+
     let step = 0;
     let beforestep = 1;
     function createImg(pos) {
@@ -164,7 +164,7 @@ async function sliderScript() {
     function resizeFunction() {
         clearTimeout(resizeTimeout);
 
-        resizeTimeout = setTimeout(() => {
+        return resizeTimeout = setTimeout(() => {
             console.log('resize');
             imgs = document.querySelectorAll('.slider-image');
             imgs.forEach(img => {

@@ -16,7 +16,7 @@
             <audio class="player" preload="metadata">
 
             </audio>
-            <div class='player-controls'>
+            <div data-settings-name="Player" class='player-controls customizible'>
                 <div class='track'>
                     <button class="player-btn player-btn-pause unactive"></button>
                     <button class="player-btn player-btn-play"></button>
@@ -32,7 +32,7 @@
 
                 </div>
             </div>
-            <div class="music-list">
+            <div data-settings-name="Music list" class="music-list customizible">
                 <ul class="music-list__list">
                     <li id="0" data-music="audio1" class="music-list__item">Forest Walk</li>
                     <li id="1" data-music="audio2" class="music-list__item">Island Beat</li>
@@ -41,7 +41,7 @@
                 </ul>
             </div>
         </section>
-        <section class=" weather-section">
+        <section data-settings-name="Weather" class=" weather-section customizible">
             <input class="city-weather-input" placeholder="city" />
             <button class="city-weather-btn">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" height="24" width="24"
@@ -55,9 +55,16 @@
                     <li class="weatherIcon">
                         <i class="owf"></i>
                     </li>
-                    <li class="weathertemp-descr"></li>
-                    <li class="weather-windSpeed"></li>
-                    <li class="weather-humidity"></li>
+                    <li class="weather-temp-descr"></li>
+                    <li class="weather-windSpeed">
+                        <span class="translate-weather-windSpeed">Wind speed: </span>
+                        <span class="windSpeed-value"></span>
+                        <span class="translate-weather-measurement">m/s</span>
+                    </li>
+                    <li class="weather-humidity">
+                        <span class="translate-weather-humidity">Humidity: </span>
+                        <span class="humidity-value"></span>
+                    </li>
                 </ul>
 
             </section>
@@ -65,14 +72,14 @@
 
     </header>
     <main class=" main">
-        <section class="currentTime">
+        <section data-settings-name="Current time" class="currentTime customizible">
         </section>
-        <section class="currentDate"></section>
-        <section class="welcome-block">
+        <section data-settings-name="Current date" class="currentDate customizible"></section>
+        <section data-settings-name="Welcoming" class="welcome-block">
             <div class="welcome-block__welcoming"></div>
             <input class="welcome-block__author-input" size="10" type="text" placeholder="Your name" />
         </section>
-        <section class="quotes">
+        <section data-settings-name="Quotes" class="quotes customizible">
             <button class="rechange-quote-btn">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" width="25" height="25" viewBox="0 0 20 20"
                     fill="currentColor">
@@ -84,40 +91,62 @@
             <article class="quotes-text"></article>
             <article class="quotes-author"></article>
         </section>
+        <button class="slider-btn left-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" width="24" height="24"
+                viewBox="0 0 24 24" stroke="currentColor">
+                <path class="left-arrow-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M15 19l-7-7 7-7" />
+            </svg>
+        </button>
+        <button class="slider-btn right-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" width="24" height="24"
+                viewBox="0 0 24 24" stroke="currentColor">
+                <path class="right-arrow-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 5l7 7-7 7" />
+            </svg>
+        </button>
     </main>
 
-    <button class="slider-btn left-btn">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" width="24" height="24" viewBox="0 0 24 24"
-            stroke="currentColor">
-            <path class="left-arrow-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M15 19l-7-7 7-7" />
-        </svg>
-    </button>
-    <button class="slider-btn right-btn">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" width="24" height="24" viewBox="0 0 24 24"
-            stroke="currentColor">
-            <path class="right-arrow-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M9 5l7 7-7 7" />
-        </svg>
-    </button>
+
+
     <footer class="footer">
-        <a>2021</a>
-        <a href="https://github.com/AndrewMakarevich/Momentum/tree/momentum">Andrew Makarevich</a>
-        <a href="https://rs.school/js/">RS School</a>
+        <section class="footer-page-settings">
+            <button class="page-settings-btn">settings</button>
+            <section class="page-settings-modal unactiveModal">
+                <button class="page-settings-closeBtn">close</button>
+                <section class="change-language-section">
+                    <select class="select-language-list">
+                        <option></option>
+                    </select>
+                </section>
+                <section class="customize-page-obj">
+                    <ul class="obj-list"></ul>
+                </section>
+            </section>
+        </section>
+        <section class="footer-links">
+            <a>2021</a>
+            <a href="https://github.com/AndrewMakarevich/Momentum/tree/momentum" class="translate-footer-author">Andrew
+                Makarevich</a>
+            <a href="https://rs.school/js/">RS School</a>
+        </section>
     </footer>
+
     <section class="slider">
-
-
     </section>
     <script src="./scripts/time-script.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="./scripts/quotes-script.js"></script>
-    <script src="./scripts/welcome-script.js"></script>
+    <script src="./scripts/welcome-script.js" type="module"></script>
     <script src="./scripts/save-user-name.js"></script>
     <script src="./scripts/weather-script.js"></script>
     <script src="https://kit.fontawesome.com/e7c3a216cf.js" crossorigin="anonymous"></script>
     <script src="./scripts/player-script.js"></script>
     <script src="./scripts/slider-script.js"></script>
+    <script src="./scripts/settings-modal-script.js"></script>
+    <script src="./scripts/translate.js" type="module"></script>
+    <script src="./scripts/translate-script.js" type="module"></script>
+    <script src="./scripts/customize-page-obj-script.js"></script>
 </body>
 
 </html>

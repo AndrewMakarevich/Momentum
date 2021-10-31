@@ -1,10 +1,12 @@
 
 
 function dateScript() {
+    const hash = window.location.hash.substr(1);
+    console.log(hash);
     const currentDateBlock = document.querySelector('.main .currentDate');
     const currentTime = new Date();
     const options = { weekday: 'long', month: 'long', day: 'numeric' };
-    const dateToShow = currentTime.toLocaleDateString('en-US', options);
+    const dateToShow = currentTime.toLocaleDateString(hash, options);
     currentDateBlock.innerText = dateToShow;
 }
 
